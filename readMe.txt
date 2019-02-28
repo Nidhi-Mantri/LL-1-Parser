@@ -29,3 +29,10 @@ First_Follow.py : -
 Input file is : - Left_factoring_removed.txt
 Output file is : - Output.txt
 This output file produces both first and follow set and parsing table as well.
+The parsing table is in the form of dictionary.
+ex -> 
+[E]
+------------------------
+	[a] -> [E -> a]
+
+it means row is of variable E and under terminal a we have a production E -> a.
