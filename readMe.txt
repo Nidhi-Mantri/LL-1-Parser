@@ -36,3 +36,10 @@ ex ->
 	[a] -> [E -> a]
 
 it means row is of variable E and under terminal a we have a production E -> a.
+
+and if it is like ..
+	[a] -> [E -> a | aA]
+	
+it means under terminal a we have two productions E -> a and E -> aA.
+
+Thanks ...
