@@ -1,0 +1,7 @@
+V : A, B, C
+T : i, e, t, a, b
+S : A
+P : 
+A -> a | iBtAC
+B -> b
+C -> eA | #

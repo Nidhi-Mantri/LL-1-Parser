@@ -1,0 +1,6 @@
+V : A, B
+T : i, e, t, a, b
+S : A
+P : 
+A -> iBtA | iBtAeA | a
+B -> b
