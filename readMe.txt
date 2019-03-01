@@ -14,7 +14,8 @@ Requirements :-  "sys" library
 9.   If there is indirect recursion like :-
 	S -> AB | a
 	A -> Sa | a
-then the code first remove the indirect recursion and then apply lemma 4.4 to further remove left recursions.     10.    Output is in the output file, there is nothing to be displayed on console. 
+then the code first remove the indirect recursion and then apply lemma 4.4 to further remove left recursions.     
+10.    Output is in the output file, there is nothing to be displayed on console. 
 Output file for left recursion is Recursion_removed.txt
 
 Left_Rec.py : - To remove left recursion from the code
@@ -29,6 +30,20 @@ First_Follow.py : -
 Input file is : - Left_factoring_removed.txt
 Output file is : - Output.txt, LMD_string.txt
 This Output.txt produces both first and follow set and parsing table as well.
+Parsing table is printed in the form of dictionary.
+example 1 :- 
+[E]
+-------------------
+	[a] -> [E -> a]
+
+it means, in the table :-
+row of 'E' and column of 'a' contains the production 'E -> a' 
+example 2 : -
+[E]
+------------------------
+	[a] -> [E -> a | aB]
+	
+it means row of 'E' and column of 'a' contains two productions 'E -> a' and 'E -> aB'
 
 LMD_string.txt : - 
    - produces the left most derivative tree for the string given if it will be completely parsed then output is 'Accepted' , otherwise it will be 'Not Accepted'.
