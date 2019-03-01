@@ -194,9 +194,55 @@ def main():
     if max_ > 1:
         output.write('Since there are multiple entries in the table, ...\n')
         output.write("LL(1) Parser can't be constructed for this grammar.\n")
+        sys.exit()
     else:
         output.write('LL(1) Parser is constructed for this grammar\n')
+        # want to parse string
+        print 'Do you want to parse a string or want to construct LMD for a string(Y/N)?'
+        # if yes or no
+        ans = raw_input()
+        if ans != 'Y' and ans != 'y' :
+            sys.exit()
+    lmd = open('LMD_string.txt', 'w')
+    # getting string 
+    print 'Enter your string: - '
+    string = raw_input()
+    lmd.write('Your given string is : - %s\n' % string)
+    # terminating with '$'
+    string = string+'$'
+    # stack with top as start variable 
+    stack = '$'+S
+    # printing LMD tree for the string
+    lmd.write("LMD for the given string : - \n")
+    while stack != string :
+        if stack[-1] == string[0]:
+            string = string[1:]
+            stack = stack[:-1]
+        else:
+            action = table[stack[-1]][string[0]]
+            # if there is no entry in the [variable][terminal] box then it is an invalid string
+            if action == []:
+                lmd.write('Not Accepted\n')
+                sys.exit()
+            else:
+                action = action[0]
+            # if there is epsilon
+            if action == '#':
+                lmd.write('%s\n' % str(stack[-1]+' -> '+action))
+                stack = stack[:-1]
+            else:
+                lmd.write('%s\n' % str(stack[-1]+' -> '+action))
+                stack = stack[:-1]+action[: : -1]   # appending production in reverse order to stack
+            print stack
+    # stack == string i.e. $ == $ then string is accepted..
+    if stack == string:
+        lmd.write("Accepted\n")
+    # closing the files...
+    lmd.close()
+    output.close()
             
+            
+        
             
 if __name__ == '__main__' :
     main()

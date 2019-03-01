@@ -27,19 +27,8 @@ output file is : - Left_factoring_removed.txt
 
 First_Follow.py : - 
 Input file is : - Left_factoring_removed.txt
-Output file is : - Output.txt
-This output file produces both first and follow set and parsing table as well.
-The parsing table is in the form of dictionary.
-ex -> 
-[E]
-------------------------
-	[a] -> [E -> a]
+Output file is : - Output.txt, LMD_string.txt
+This Output.txt produces both first and follow set and parsing table as well.
 
-it means row is of variable E and under terminal a we have a production E -> a.
-
-and if it is like ..
-	[a] -> [E -> a | aA]
-	
-it means under terminal a we have two productions E -> a and E -> aA.
-
-Thanks ...
+LMD_string.txt : - 
+   - produces the left most derivative tree for the string given if it will be completely parsed then output is 'Accepted' , otherwise it will be 'Not Accepted'.

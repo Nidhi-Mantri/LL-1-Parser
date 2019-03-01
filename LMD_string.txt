@@ -1,0 +1,14 @@
+Your given string is : - i+i*i
+LMD for the given string : - 
+E -> TA
+T -> FB
+F -> i
+B -> #
+A -> +TA
+T -> FB
+F -> i
+B -> *FB
+F -> i
+B -> #
+A -> #
+Accepted
